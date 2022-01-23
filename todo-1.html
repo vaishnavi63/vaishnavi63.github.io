@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>git_hack</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allan&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Asset&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/Features-Boxed.css">
+    <link rel="stylesheet" href="assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="assets/css/Highlight-Phone.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="assets/css/Projects-Clean.css">
+    <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="assets/css/Simple-Slider.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/todo.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg bg-secondary navigation-clean">
+        <div class="container"><a class="navbar-brand border rounded-pill border-white">&nbsp; §↑↺▶€↯↑&nbsp; ♫▲↑£ (STUDENT MATE)&nbsp;&nbsp;<br></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-2"><button class="navbar-toggler" data-bs-toggle="collapse"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item text-dark bg-secondary"></li>
+                </ul>
+                <ul class="navbar-nav"></ul>
+            </div><a class="btn btn-light action-button" role="button" href="index.html"><strong>HOME&nbsp;&nbsp;</strong><i class="fa fa-home"></i></a>
+        </div>
+    </nav><div id="myDIV" class="header">
+  <h2 style="margin:5px">My To Do List</h2>
+  <input type="text" id="myInput" placeholder="Works to be done...">
+  <span onclick="newElement()" class="addBtn">Add</span>
+</div>
+
+<ul id="myUL">
+<li>Organizing my room</li>
+  <li>Laptop service</li>
+  <li>Project meet</li>
+  <li>Buy stationaries</li>
+  <li>Read a book</li>
+  <li>Watch movie</li>
+    <li>Watering plants</li>
+</ul>
+<script>
+    // Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span1 = document.createElement("SPAN_1");
+  var txt = document.createTextNode("\u00D7");
+  span1.className = "close";
+  span1.appendChild(txt);
+  myNodelist[i].appendChild(span1);
+}
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span1 = document.createElement("SPAN_1");
+  var txt = document.createTextNode("\u00D7");
+  span1.className = "close";
+  span1.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+</script>
+    <footer class="footer-basic">
+        <div class="social"><a href="https://www.instagram.com/vaishnavi_garrepalli/"><i class="icon ion-social-instagram"></i></a><a href="https://github.com/vaishnavi63"><i class="icon ion-social-github"></i></a><a href="vaishnavigarrepalli@gmail.com"><i class="icon ion-android-mail"></i></a><a href="https://goo.gl/maps/oNqdcMTzLpVmuq547"><i class="icon ion-android-pin"></i></a></div>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="index.html">Home</a></li>
+            <li class="list-inline-item"><a href="classes.html">Classes</a></li>
+            <li class="list-inline-item"><a href="todo-1.html">To-do</a></li>
+            <li class="list-inline-item"><a href="resources.html">Resources</a></li>
+            <li class="list-inline-item"><a href="calendar.html">Calendar</a></li>
+        </ul>
+        <p class="copyright">Copyright © 2022</p>
+    </footer>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.4.8/swiper-bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/Simple-Slider.js"></script>
+</body>
+
+</html>
